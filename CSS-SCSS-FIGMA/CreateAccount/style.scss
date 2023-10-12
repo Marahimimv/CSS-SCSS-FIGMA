@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Work Sans", sans-serif;
+}
+
+$primary-color1: #fff;
+$primary-color2: #2b2b2b;
+$primary-color-inputs: #2b2b2b;
+
+@mixin align-center() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin column($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+.default-btn {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  color: $primary-color1;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #a259ff;
+  border-radius: 20px;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.default-input {
+  background-color: $primary-color1;
+  border-radius: 20px;
+  outline: none;
+
+  &::placeholder {
+    color: $primary-color-inputs;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
+
+.section {
+  background-color: $primary-color2;
+
+  .navbar {
+    padding: 20px 50px;
+    @include align-center();
+    justify-content: space-between;
+    width: 1280px;
+    margin: auto;
+
+    .right {
+      @include align-center();
+      column-gap: 10px;
+
+      a {
+        color: $primary-color1;
+        padding: 0px 20px;
+      }
+
+      button {
+        @extend .default-btn;
+        padding: 30px;
+        width: 152px;
+        height: 60px;
+        @include align-center();
+        column-gap: 12px;
+        outline: none;
+      }
+
+      .burger-btn {
+        display: none;
+      }
+    }
+  }
+}
+
+.account-section {
+  background-color: $primary-color2;
+  @include align-center();
+  column-gap: 60px;
+  > img {
+    width: 50%;
+  }
+
+  .right {
+    color: $primary-color1;
+
+    > div {
+      @include column(15px);
+
+      .input {
+        display: inline-block;
+        position: relative;
+
+        img {
+          position: absolute;
+          left: 20px;
+          top: 13px;
+        }
+        input {
+          border: 1px solid #858584;
+          background-color: $primary-color1;
+          width: 330px;
+          height: 46px;
+          padding: 16px 20px;
+          padding-left: 52px;
+          @extend .default-input;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 51px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 110%;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      text-transform: capitalize;
+      margin-bottom: 40px;
+    }
+
+    button {
+      width: 330px;
+      height: 46px;
+      @extend .default-btn;
+      padding: 0px 50px;
+      margin-top: 30px;
+    }
+  }
+}
+
+.footer-section {
+  background-color: #3b3b3b;
+  padding: 40px 0px;
+
+  .input-button {
+    display: inline-block;
+    position: relative;
+    input {
+      @extend .default-input;
+      width: 420px;
+      height: 60px;
+      padding: 16px 0px 16px 20px;
+    }
+
+    button {
+      @extend .default-btn;
+      position: absolute;
+      right: 0;
+      width: 179px;
+      height: 60px;
+      padding: 0px 50px;
+    }
+  }
+
+  .container {
+    width: 1049px;
+    margin: auto;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-around;
+
+    div:first-child {
+      p:first-of-type {
+        width: 238px;
+      }
+    }
+
+    div:last-child {
+      p {
+        width: 330px;
+      }
+    }
+
+    img {
+      margin-bottom: 30px;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    h5 {
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 160%;
+      text-transform: capitalize;
+      color: $primary-color1;
+      margin-bottom: 25px;
+    }
+  }
+
+  .bottom {
+    .line {
+      width: 1050px;
+      height: 1px;
+      background: #858584;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 375px) {
+}
